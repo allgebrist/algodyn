@@ -1,1 +1,2 @@
 # algodyn
+R package
