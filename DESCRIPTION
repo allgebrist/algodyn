@@ -7,5 +7,6 @@ Maintainer: Allan A. Zea <allan.zea@ciens.ucv.ve>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
 License: AGPL-3
+Repository: CRAN, Github
 Encoding: UTF-8
 LazyData: true
