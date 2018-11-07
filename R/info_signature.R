@@ -1,7 +1,16 @@
 
 info_signature <- function(x, block_size = 4, offset = 4) {
 
-    x_adj_matrix <- as.matrix(as_adjacency_matrix(x))
+    x_adj_matrix <- c()
+
+    if(is.igraph(x)) {
+        x_adj_matrix <- as.matrix(as_adjacency_matrix(x))
+    } else if(is.matrix(x)) {
+        x_adj_matrix <- x
+    } else {
+        stop("The object should be a graph or adjacency matrix")
+    }
+
     x_bdm_value <- bdm2D(x_adj_matrix, block_size, offset)
 
     edge_deletions_df <- as_data_frame(x, what = "edges")
