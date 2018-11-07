@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541627307120.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "19796FC2",
+    "lastKnownWriteTime" : 1541627979,
+    "last_content_update" : 1541627979326,
+    "path" : "~/algodyn/R/kolmogorov_sinai_decompose.R",
+    "project_path" : "R/kolmogorov_sinai_decompose.R",
+    "properties" : {
+        "cursorPosition" : "5,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 11,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

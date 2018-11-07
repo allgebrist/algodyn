@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1541590338483.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6931D8CB",
+    "lastKnownWriteTime" : 1541591249,
+    "last_content_update" : 1541591249448,
+    "path" : "~/algodyn/R/calculate_info_edges.R",
+    "project_path" : "R/calculate_info_edges.R",
+    "properties" : {
+        "cursorPosition" : "1,38",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
