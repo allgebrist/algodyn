@@ -20,7 +20,10 @@ calculate_info_edges <- function(x, block_size = 4, offset = 4) {
 
     for(i in 1:nrow(edge_deletions_df)) {
 
-        # FIX: delete_edges() requires a graph
+        if(is.matrix(x)) {
+          x <- graph_from_adjacency_matrix(x)
+        }
+
         x_deleted_edge  <- delete_edges(x, paste0(edge_deletions_df[i, ]$from,
                                                   "|",edge_deletions_df[i, ]$to))
 
