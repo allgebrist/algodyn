@@ -32,5 +32,5 @@ calculate_info_vertices <- function(x, block_size = 4, offset = 4) {
         vertex_deletions_df[i, ]$bdm_difference <- x_bdm_value - deleted_vertex_bdm_value
     }
 
-    return (vertex_deletions_df)
+    return(vertex_deletions_df)
 }
