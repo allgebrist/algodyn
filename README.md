@@ -1,5 +1,7 @@
 # algodyn
-R package
+An R package
+
+### If you use this tool please cite:
 
 #### Maintainer: Allan A. Zea (allan.zea [at] ciens.ucv.ve)
 
