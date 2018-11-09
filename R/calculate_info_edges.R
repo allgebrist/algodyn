@@ -3,9 +3,9 @@ calculate_info_edges <- function(x, block_size = 4, offset = 4) {
 
     x_adj_matrix <- c()
 
-    if(is.igraph(x)) {
+    if (is.igraph(x)) {
         x_adj_matrix <- as.matrix(as_adjacency_matrix(x))
-    } else if(is.matrix(x)) {
+    } else if (is.matrix(x)) {
         x_adj_matrix <- x
     } else {
         stop("The object should be a graph or adjacency matrix")
@@ -18,9 +18,8 @@ calculate_info_edges <- function(x, block_size = 4, offset = 4) {
 
     edge_deletions_df[, deletion_columns] <- NA
 
-    for(i in 1:nrow(edge_deletions_df)) {
-
-        if(is.matrix(x)) {
+    for (i in 1:nrow(edge_deletions_df)) {
+        if (is.matrix(x)) {
           x <- graph_from_adjacency_matrix(x)
         }
 
@@ -32,9 +31,7 @@ calculate_info_edges <- function(x, block_size = 4, offset = 4) {
 
         edge_deletions_df[i, ]$bdm_value <- deleted_edge_bdm_value
         edge_deletions_df[i, ]$bdm_difference <- x_bdm_value - deleted_edge_bdm_value
-
     }
 
     return(edge_deletions_df)
-
 }
