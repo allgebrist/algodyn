@@ -22,7 +22,6 @@ inforank <- function(x, what = 'default', block_size = 4, offset = 4) {
             stop("The ranking should be performed according to the contributions of either vertices or edges.")
         }
     } else if (is.character(x)) {
-
         # Include here perturbations on strings
         if (what = 'default') {
             # Remove characters
