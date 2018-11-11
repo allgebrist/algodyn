@@ -1,15 +1,24 @@
 
-element_mutate <- function(x, index) {
-    ## a element_mutate le das una coordenada del objeto que quieres mutar,
-    ## si es binario le hace flip, si no lo es entonces necesita un input o
-    ## lo hace aleatorio. Es básicamente la función que usarías para las
-    ## perturbaciones para calculate_info_nodes y la misma para calculate_info_edges.
+element_mutate <- function(x, index, mutations = NULL) {
 
     x_characters <- unlist(str_split(x, pattern = ""))
 
-    if (all(x_characters %in% c("0","1"))) {
-        for (i in 1:length(index)) {
-            x_characters[index[i]] <- as.numeric(!as.integer(x_characters[index[i]]))
+    if (!is.null(mutations)) {
+        if (length(index) == length(mutations)) {
+            for (i in 1:length(index)) {
+                x_characters[index[i]] <- mutations[i]
+            }
+        } else {
+            stop("The number of indices and elements to be mutated should be the same.")
+        }
+    } else {
+        # The inserted string is binary
+        if (all(x_characters %in% c("0","1"))) {
+            for (i in 1:length(index)) {
+                x_characters[index[i]] <- as.numeric(!as.integer(x_characters[index[i]]))
+            }
+        } else {
+            stop("A vector of replacement characters should be provided.")
         }
     }
 
