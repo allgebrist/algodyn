@@ -1,5 +1,5 @@
 
-inforank <- function(x, what = NULL, block_size = 4, offset = 4) {
+inforank <- function(x, what = NULL, block_size = 4, offset = 4, base = NULL) {
 
     inforank_df <- c()
 
@@ -25,6 +25,9 @@ inforank <- function(x, what = NULL, block_size = 4, offset = 4) {
         # Include here perturbations on strings
         if (is.null(what)) {
             # Remove characters
+            x_characters <- unlist(str_split(x, pattern = ""))
+            inforank_df <- calculate_info_characters(x, block_size, offset, base)
+            inforank_df$inforank <- rank(-as.numeric(inforank_df$bdm_difference), ties.method = "min")
         } else {
             stop("Only characters can be removed from the string. Please leave the 'what' parameter unaltered.")
         }
