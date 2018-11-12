@@ -8,7 +8,7 @@ calculate_info_edges <- function(x, block_size = 4, offset = 4) {
     } else if (is.matrix(x)) {
         x_adj_matrix <- x
     } else {
-        stop("The object should be a graph or adjacency matrix")
+        stop("ERROR: The object should be a graph or adjacency matrix.")
     }
 
     x_bdm_value <- bdm2D(x_adj_matrix, block_size, offset)

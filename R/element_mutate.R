@@ -9,7 +9,7 @@ element_mutate <- function(x, index, mutations = NULL) {
                 x_characters[index[i]] <- mutations[i]
             }
         } else {
-            stop("The number of indices and elements to be mutated should be the same.")
+            stop("ERROR: The number of indices and elements to be mutated should be the same.")
         }
     } else {
         # The inserted string is binary
@@ -18,7 +18,7 @@ element_mutate <- function(x, index, mutations = NULL) {
                 x_characters[index[i]] <- as.numeric(!as.integer(x_characters[index[i]]))
             }
         } else {
-            stop("A vector of replacement characters should be provided.")
+            stop("ERROR: A vector of replacement characters should be provided.")
         }
     }
 
