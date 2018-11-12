@@ -1,16 +1,21 @@
+get_k_values <- function(alphabet_size) {
 
+  name <- paste0("K", as.character(alphabetSize))
 
-library(acss)
+  path <- paste0("./data/", name, ".rds")
+
+  kData <- as.data.frame(read_rds(path = path))
+
+  kData$S <- NULL
+
+  return(kData)
+
+}
+
 
 maxKnownKs <- read.csv("data/maxKnownKs.csv")
+# Erase useless column
 maxKnownKs$X <- NULL
-
-ldData <- read.csv("data/logicalDepthsBinaryStrings.csv",
-                   colClasses = c('character',"numeric"))
-
-colnames(ldData)        <- c('string','ld')
-logicalDepths           <- data.frame(ldData$ld)
-rownames(logicalDepths) <- ldData$string
 
 
 count_symbols <- function(x) {
@@ -77,17 +82,18 @@ split_string <- function(x, block_size, offset) {
     return(subs)
 }
 
-#receives the already splitted vector of input strings
-stringBDM <- function(strings_vector, base) {
+# Receives the already splitted vector of input strings
+get_bdm <- function (strings_vector, k_values, base) {
 
     string_counts <- as.data.frame(table(strings_vector))
-    string_counts["ks"] <- acss(as.vector(string_counts[["stringsVector"]]), base)[, 1]
+    string_counts$strings_vector <- as.character(string_counts$strings_vector)
+    string_counts["ks"] <- k_values[string_counts$strings_vector, ]
 
     na_indices <- as.integer(which(is.na(string_counts$ks)))
     na_strings <- as.vector(string_counts$strings_vector[na_indices])
     na_lengths <- unlist(lapply(na_strings, nchar))
 
-    # more complex (+1) than the highest known values
+    # More complex (+1) than the highest known values
     naKs <- maxKnownKs[, paste0("K.", toString(base))] + 1
 
     string_counts[is.na(string_counts)] <- naKs
@@ -96,23 +102,28 @@ stringBDM <- function(strings_vector, base) {
     return(bdm)
 }
 
-#receives the already splitted vector of input strings
-stringBDMLD <- function(strings_vector, base) {
+normalize_string <- function(x) {
 
-    string_counts <- as.data.frame(table(strings_vector))
-    bdmld <- sum(logicalDepths[as.character(string_counts$strings_vector), ] * (log2(string_counts$Freq) + 1))
+    splitted <- strsplit(x, "")
+    elements <- lapply(splitted, unique)
 
-    return(bdmld)
+    if (any(vapply(elements, length, 0) > 10)) {
+        stop("Too many symbols (more than 10)")
+    }
+
+    exchanged <- mapply(function(a, b) seq(0, length.out = length(a))[match(b, a)],
+                        elements, splitted, SIMPLIFY = FALSE)
+
+    return(vapply(exchanged, paste, "", collapse = ""))
 }
 
-# ## should print 80.12 bits
-#testBDM <- stringBDM(c("000110100111","111001011000"),2)
-#testBDM
+# Get the BDM value of a given string x
+bdm1d <- function(x, block_size, offset, base, k_values){
 
-# ## should print 1002 steps
-# testLD <- stringBDMLD(c("000110100111","111001011000"),2)
-# testLD
+    splitted_string <- split_string(x, block_size, offset)
+    normalized_string <- unlist(lapply(splitted_string, normalize_string))
 
-# ##should print 31 * (log2(3) + 1) = 80.13 steps
-#testLD2 <- stringBDMLD(c("010101010101", "010101010101", "010101010101"),2)
-#testLD2
+    bdm <- get_bdm(strings_vector = normalized_string, k_values = k_values, base = 2 )
+
+    return(bdm)
+}
