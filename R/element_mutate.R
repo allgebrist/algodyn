@@ -13,7 +13,7 @@ element_mutate <- function(x, index, mutations = NULL) {
         }
     } else {
         # The inserted string is binary
-        if (all(x_characters %in% c("0","1"))) {
+        if (all(x_characters %in% c("0", "1"))) {
             for (i in 1:length(index)) {
                 x_characters[index[i]] <- as.numeric(!as.integer(x_characters[index[i]]))
             }
