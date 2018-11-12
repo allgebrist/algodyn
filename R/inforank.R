@@ -1,5 +1,5 @@
 
-inforank <- function(x, what = NULL, block_size = 4, offset = 4, base = NULL) {
+inforank <- function(x, what = NULL, block_size = NULL, offset = NULL,  base = NULL) {
 
     inforank_df <- c()
 
@@ -10,7 +10,12 @@ inforank <- function(x, what = NULL, block_size = 4, offset = 4, base = NULL) {
         } else {
             x_adj_matrix <- x
         }
-
+        if (is.null(block_size) && is.null(offset)) {
+            block_size <- 4
+            offset <- 4
+        } else if (xor(is.null(block_size), is.null(offset))) {
+            stop("A block size and offset should be provided to the function.")
+        }
         # Perturbations on graphs
         if (what = 'vertices') {
             inforank_df <- calculate_info_vertices(x, block_size, offset)
