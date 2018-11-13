@@ -1,5 +1,5 @@
 # algodyn
-An R package
+Algorithmic Information Dynamics with the R language.
 
 ### If you use this tool please cite
 
