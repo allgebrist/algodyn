@@ -38,7 +38,7 @@ inforank <- function(x, what = NULL, block_size = NULL, offset = NULL,  base = N
                 }
                 # Remove characters
                 x_characters <- unlist(str_split(x, pattern = ""))
-                inforank_df <- calculate_info_characters(x, block_size, offset, base)
+                inforank_df <- calculate_info_bits(x, block_size, offset, base)
                 inforank_df$inforank <- rank(-as.numeric(inforank_df$bdm_difference), ties.method = "min")
             } else {
                 stop("ERROR: The 'base' parameter cannot be ommited.")
