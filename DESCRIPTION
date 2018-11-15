@@ -2,7 +2,10 @@ Package: algodyn
 Type: Package
 Title: Algorithmic Information Dynamics
 Version: 0.1.0
-Authors: Allan A. Zea, Antonio Rueda-Toicen, Hector Zenil
+Authors@R: c(person("Allan A.", "Zea", role = c("aut", "cre")), 
+             person("Antonio", "Rueda-Toicen", role = c("aut", "cre")),
+             person("Hector", "Zenil", role = c("aut")))
+
 Maintainer: Allan A. Zea <allan.zea@ciens.ucv.ve>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
