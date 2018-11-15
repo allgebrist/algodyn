@@ -1,9 +1,9 @@
 
-element_mutate <- function(x, index, mutations = NULL) {
+element_mutate <- function(x, index, mutations) {
 
     x_characters <- unlist(str_split(x, pattern = ""))
 
-    if (!is.null(mutations)) {
+    if (!missing(mutations)) {
         if (length(index) == length(mutations)) {
             for (i in 1:length(index)) {
                 x_characters[index[i]] <- mutations[i]
