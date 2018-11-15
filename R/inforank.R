@@ -1,5 +1,5 @@
 
-inforank <- function(x, what, block_size, offset,  base) {
+inforank <- function(x, what, block_size, offset, base) {
 
     inforank_df <- c()
 
