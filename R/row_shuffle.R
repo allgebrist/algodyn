@@ -1,7 +1,7 @@
 
-row_shuffle <- function(x, row_position, replacement = NULL) {
+row_shuffle <- function(x, row_position, replacement) {
 
-    if (!is.null(replacement)) {
+    if (!missing(replacement)) {
         if(length(replacement) == nrow(x)) {
             x[row_position, ] <- replacement
         } else {

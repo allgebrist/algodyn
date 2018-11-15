@@ -6,7 +6,7 @@ Authors: Hector Zenil, Allan A. Zea, Narsis A. Kiani, Jesper Tegner
 Maintainer: Allan A. Zea <allan.zea@ciens.ucv.ve>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-Imports: purrr
+Imports: igraph, purrr
 License: AGPL-3
 Repository: CRAN, Github
 Encoding: UTF-8

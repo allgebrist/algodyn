@@ -1,5 +1,5 @@
 
-inforank <- function(x, what = NULL, block_size = NULL, offset = NULL,  base = NULL) {
+inforank <- function(x, what, block_size, offset,  base) {
 
     inforank_df <- c()
 
@@ -10,17 +10,17 @@ inforank <- function(x, what = NULL, block_size = NULL, offset = NULL,  base = N
         } else {
             x_adj_matrix <- x
         }
-        if (is.null(block_size) && is.null(offset)) {
+        if (missing(block_size) && missing(offset)) {
             block_size <- 4
             offset <- 4
-        } else if (xor(is.null(block_size), is.null(offset))) {
+        } else if (xor(missing(block_size), missing(offset))) {
             stop("ERROR: A block size and offset should be provided to the function.")
         }
         # Perturbations on graphs
         if (what = 'vertices') {
             inforank_df <- calculate_info_vertices(x, block_size, offset)
             inforank_df$inforank <- rank(-as.numeric(inforank_df$bdm_difference), ties.method = "min")
-        } else if (what = 'edges' || is.null(what)) {
+        } else if (what = 'edges' || missing(what)) {
             inforank_df <- calculate_info_edges(x, block_size, offset)
             inforank_df$inforank <- rank(-as.numeric(inforank_df$bdm_difference), ties.method = "min")
         } else {
@@ -28,7 +28,7 @@ inforank <- function(x, what = NULL, block_size = NULL, offset = NULL,  base = N
         }!
     } else if (is.character(x)) {
         # Include here perturbations on strings
-        if (is.null(what)) {
+        if (missing(what)) {
             if (!is.null(base)) {
                 if (is.null(block_size) && is.null(offset)) {
                     block_size <- 4
