@@ -114,7 +114,7 @@ normalize_string <- function(x) {
     return(vapply(exchanged, paste, "", collapse = ""))
 }
 
-# Get BDM value of a given string x after normalizing it
+# Get BDM value of a given string 'x' after normalizing it
 bdm1d <- function(x, block_size, offset, base, k_values){
 
     splitted_string <- split_string(x, block_size, offset)

@@ -35,12 +35,14 @@ my_partition <- function(mat, block_size, offset) {
            function(i) mat[i[[1]], i[[2]]])
 }
 
-# Used to lookup entries in four_by_four_ctm and three_by_three_ctm
+# Used to look up entries in the tables
+# four_by_four_ctm and three_by_three_ctm
 stringify <- function(small_block) {
 
     paste0(c(t(small_block)), collapse = "")
 }
 
+# Calculate the block entropy
 block_entropy <- function(mat, block_size, offset) {
 
     parts <- my_partition(mat, block_size, offset)
@@ -55,6 +57,7 @@ block_entropy <- function(mat, block_size, offset) {
     return(-sum(probabilities * log2(probabilities)))
 }
 
+# Get BDM value of a given matrix 'mat'
 bdm2d <- function(mat, block_size, offset) {
 
     parts <- my_partition(mat, block_size, offset)
