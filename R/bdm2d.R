@@ -38,7 +38,6 @@ my_partition <- function(mat, block_size, offset) {
 # Used to look up entries in the tables
 # four_by_four_ctm and three_by_three_ctm
 stringify <- function(small_block) {
-
     paste0(c(t(small_block)), collapse = "")
 }
 
