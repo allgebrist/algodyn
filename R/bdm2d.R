@@ -26,9 +26,8 @@ ind <- function(mat_dim, block_size, offset) {
         seq(block_size, mat_dim, by = offset))
 }
 
-# This is a helper function that generates subset indexing according to the dimension of the
-# matrix, the first sequence constructs the starting point of the subset index considering
-# the offset while the second sequence constructs the ending point of the subset index
+# This is a helper function that generates subset indexing
+# of the matrix according to its dimension
 my_partition <- function(mat, block_size, offset) {
 
     lapply(cross2(ind(nrow(mat), block_size, offset),
@@ -51,7 +50,7 @@ block_entropy <- function(mat, block_size, offset) {
     rownames(squares_tally) <- squares_tally$flat_square
     squares_tally$flat_squares <- NULL
 
-    probabilities = squares_tally[, 1]/nrow(squares_tally)
+    probabilities = squares_tally[, 1] / nrow(squares_tally)
 
     return(-sum(probabilities * log2(probabilities)))
 }
