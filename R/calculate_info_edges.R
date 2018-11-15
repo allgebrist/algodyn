@@ -27,7 +27,7 @@ calculate_info_edges <- function(x, block_size = 4, offset = 4) {
                                                   "|",edge_deletions_df[i, ]$to))
 
         deleted_edge_matrix <- as.matrix(as_adjacency_matrix(x_deleted_edge))
-        deleted_edge_bdm_value <- bdm2D(deleted_edge_matrix, block_size, offset)
+        deleted_edge_bdm_value <- bdm2d(deleted_edge_matrix, block_size, offset)
 
         edge_deletions_df[i, ]$bdm_value <- deleted_edge_bdm_value
         edge_deletions_df[i, ]$bdm_difference <- x_bdm_value - deleted_edge_bdm_value
