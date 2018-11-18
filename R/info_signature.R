@@ -8,7 +8,6 @@ info_signature <- function(x, what, block_size = 4, offset = 4) {
         edge_deletions_df <- edge_deletions_df[order(-edge_deletions_df$bdm_difference), ]
     } else if (what = 'vertices') {
         vertex_deletions_df <- calculate_info_vertices(x, block_size, offset)
-
         vertex_deletions_df <- vertex_deletions_df[vertex_deletions_df$bdm_difference > 0, ]
         vertex_deletions_df <- vertex_deletions_df[order(-vertex_deletions_df$bdm_difference), ]
     } else {
