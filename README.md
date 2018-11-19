@@ -1,7 +1,9 @@
 # algodyn
 Algorithmic Information Dynamics with the R language.
 
-This package is brought to you by the [Algorithmic Dynamics Lab](https://www.algorithmicdynamics.net/) and the [Algorithmic Nature Group](https://algorithmicnature.org/).
+This package is brought to you by the [Algorithmic Dynamics Lab](https://www.algorithmicdynamics.net/) and the [Algorithmic Nature Group](https://algorithmicnature.org/). 
+
+### Usage
 
 ### If you use this tool please cite
 
