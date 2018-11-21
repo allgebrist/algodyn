@@ -12,5 +12,5 @@ random_shift <- function(x, position, elements) {
         x[position, ] <- new_row
     }
 
-    return()
+    return(x)
 }
