@@ -1,9 +1,9 @@
 
-row_shuffle <- function(x, row_position, replacement) {
+row_shuffle <- function(x, position, replacement) {
 
     if (!missing(replacement)) {
         if(length(replacement) == nrow(x)) {
-            x[row_position, ] <- replacement
+            x[position, ] <- replacement
         } else {
             stop("ERROR: The inserted row should have as many columns as the matrix")
         }
