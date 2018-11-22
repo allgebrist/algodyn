@@ -1,8 +1,8 @@
 
-random_shift <- function(x, position, elements) {
+random_shift <- function(x, position, seed, elements) {
 
     if (is.matrix(x)) {
-        set.seed(123)
+        set.seed(seed)
         if (missing(elements)) {
             elements <- c(0, 1)
         } else {
