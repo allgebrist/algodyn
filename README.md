@@ -3,7 +3,7 @@ Algorithmic Information Dynamics with the R language.
 
 This package is brought to you by the [Algorithmic Dynamics Lab](https://www.algorithmicdynamics.net/) and the [Algorithmic Nature Group](https://algorithmicnature.org/). 
 
-### If you use this tool please cite
+### How to cite this package
 
 #### Maintainer: Allan A. Zea (allan.zea [at] ciens.ucv.ve)
 
