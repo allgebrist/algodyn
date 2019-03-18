@@ -1,4 +1,3 @@
-
 # Load 4 x 4 CTM values
 four_by_four_ctm <- read.csv("data/K-4x4.csv",
                              stringsAsFactors = FALSE,
@@ -22,57 +21,59 @@ three_by_three_ctm$square <- NULL
 # Split matrices in blocks
 ind <- function(mat_dim, block_size, offset) {
 
-    Map(`:`, seq(1, mat_dim - block_size + 1, by = offset),
-        seq(block_size, mat_dim, by = offset))
+  Map(`:`, seq(1, mat_dim - block_size + 1, by = offset),
+      seq(block_size, mat_dim, by = offset))
 }
 
 # This is a helper function that generates subset indexing
 # of the matrix according to its dimension
 my_partition <- function(mat, block_size, offset) {
 
-    lapply(cross2(ind(nrow(mat), block_size, offset),
-                  ind(ncol(mat), block_size, offset)),
-           function(i) mat[i[[1]], i[[2]]])
+  lapply(cross2(ind(nrow(mat), block_size, offset),
+                ind(ncol(mat), block_size, offset)),
+         function(i) mat[i[[1]], i[[2]]])
 }
 
 # Used to look up entries in the tables
 # four_by_four_ctm and three_by_three_ctm
 stringify <- function(small_block) {
-    paste0(c(t(small_block)), collapse = "")
+  paste0(c(t(small_block)), collapse = "")
 }
 
 # Calculate the block entropy
 block_entropy <- function(mat, block_size, offset) {
 
-    parts <- my_partition(mat, block_size, offset)
-    flat_squares <- unlist(lapply(parts, stringify))
+  parts <- my_partition(mat, block_size, offset)
+  flat_squares <- unlist(lapply(parts, stringify))
 
-    squares_tally <- as.data.frame(table(flat_squares))
-    rownames(squares_tally) <- squares_tally$flat_square
-    squares_tally$flat_squares <- NULL
+  squares_tally <- as.data.frame(table(flat_squares))
+  rownames(squares_tally) <- squares_tally$flat_square
+  squares_tally$flat_squares <- NULL
 
-    probabilities = squares_tally[, 1] / nrow(squares_tally)
+  probabilities = squares_tally[, 1] / nrow(squares_tally)
 
-    return(-sum(probabilities * log2(probabilities)))
+  return(-sum(probabilities * log2(probabilities)))
 }
 
 # Get BDM value of a given matrix 'mat'
-bdm2d <- function(mat, block_size, offset) {
+bdm2D <- function(mat, block_size, offset) {
 
-    parts <- my_partition(mat, block_size, offset)
-    flat_squares <- unlist(lapply(parts, stringify))
+  parts <- my_partition(mat, block_size, offset)
+  flat_squares <- unlist(lapply(parts, stringify))
 
-    squares_tally <- as.data.frame(table(flat_squares))
-    rownames(squares_tally) <- squares_tally$flat_squares
-    squares_tally$flat_squares <- NULL
+  squares_tally <- as.data.frame(table(flat_squares))
+  rownames(squares_tally) <- squares_tally$flat_squares
+  squares_tally$flat_squares <- NULL
 
-    if (block_size == 4) {
-        bdm <- (sum(four_by_four_ctm[rownames(squares_tally), ]) + sum(log2(squares_tally$Freq)))
-    } else {
-        bdm <- (sum(three_by_three_ctm[rownames(squares_tally), ]) + sum(log2(squares_tally$Freq)))
-    }
+  if (block_size == 4) {
+    bdm <- (sum(four_by_four_ctm[rownames(squares_tally), ])
+            + sum(log2(squares_tally$Freq)))
+  } else {
+    bdm <- (sum(three_by_three_ctm[rownames(squares_tally), ])
+            + sum(log2(squares_tally$Freq)))
+  }
 
-    return(bdm)
+  return(bdm)
 }
 
 # tests
