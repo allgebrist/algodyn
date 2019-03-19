@@ -7,7 +7,7 @@
 #' @param what graph elements to be removed (i.e. edges or vertices)
 #' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
-#' @param base
+#' @param base number of distinct characters in \code{x} when \code{x} is a string
 #'
 #' @return
 #' @export
@@ -48,7 +48,7 @@ inforank <- function(x, what, block_size, offset, base) {
                 if (missing(block_size) && missing(offset)) {
                     block_size <- 4
                     offset <- 4
-                } else if (xor(is.null(block_size), is.null(offset))) {
+                } else if (xor(missing(block_size), missing(offset))) {
                     stop("ERROR: A block size and offset should be provided to the function.")
                 }
                 # Remove characters
