@@ -1,15 +1,3 @@
-get_k_values <- function(alphabet_size) {
-
-    name <- paste0("K", as.character(alphabet_size))
-    path <- paste0("./data/", name, ".rds")
-
-    k_data <- as.data.frame(read_rds(path = path))
-    k_data$S <- NULL
-
-    return(kData)
-}
-
-
 maxKnownKs <- read.csv("data/maxKnownKs.csv")
 # Erase useless column
 maxKnownKs$X <- NULL
