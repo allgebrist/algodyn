@@ -25,17 +25,10 @@ plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 
     is <- info_signature(x, what, block_size, offset)
 
-    diffs <- c()
-
-    for (i in 1:nrow(is)) {
-        if (i != nrow(is)) {
-            diffs <- c(diffs, is$bdm_difference[i] - is$bdm_difference[i + 1])
-        }
-    }
-
-    plot(log(is$bdm_difference) + 80, xlab = "edges sorted by max info value", ylab = "log info values (+80)",
+    plot(log(abs(is$bdm_difference)), xlab = "edges sorted by max info value", ylab = "log info values",
          main = "Information signature", col = "red")
-    lines(log(is$bdm_difference) + 80, col = "red")
+
+    lines(log(abs(is$bdm_difference)), col = "red")
 
 }
 
