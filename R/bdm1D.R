@@ -69,11 +69,11 @@ split_string <- function(x, block_size, offset) {
 }
 
 # Receives the already splitted vector of input strings
-get_bdm <- function (strings_vector, k_values, base) {
+get_bdm <- function (strings_vector, base) {
 
     string_counts <- as.data.frame(table(strings_vector))
     string_counts$strings_vector <- as.character(string_counts$strings_vector)
-    string_counts["ks"] <- k_values[string_counts$strings_vector, ]
+    string_counts["ks"] <- acss(as.vector(string_counts[["strings_vector"]]), base)[, 1]
 
     na_indices <- as.integer(which(is.na(string_counts$ks)))
     na_strings <- as.vector(string_counts$strings_vector[na_indices])
@@ -104,12 +104,12 @@ normalize_string <- function(x) {
 }
 
 # Get BDM value of a given string 'x' after normalizing it
-bdm1d <- function(x, block_size, offset, base, k_values){
+bdm1D <- function(x, block_size, offset, base){
 
     splitted_string <- split_string(x, block_size, offset)
     normalized_string <- unlist(lapply(splitted_string, normalize_string))
 
-    bdm <- get_bdm(strings_vector = normalized_string, k_values = k_values, base = 2 )
+    bdm <- get_bdm(strings_vector = normalized_string, base = 2)
 
     return(bdm)
 }

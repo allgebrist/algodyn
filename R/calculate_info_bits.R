@@ -1,8 +1,20 @@
 
+#' Calculate information contribution of bits
+#'
+#' @param x character string
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)
+#' @param base
+#'
+#' @return
+#' @export
+#'
+#' @examples
+
 calculate_info_bits <- function(x, block_size, offset, base) {
 
     k_values <- get_k_values(alphabet_size = base)
-    x_bdm_value <- bdm1d(x, block_size, offset, base, k_values)
+    x_bdm_value <- bdm1D(x, block_size, offset, base, k_values)
     x_char_vector <- unlist(str_split(x, pattern = ""))
 
     perturbations <- c()
