@@ -13,8 +13,7 @@
 
 calculate_info_bits <- function(x, block_size, offset, base) {
 
-    k_values <- get_k_values(alphabet_size = base)
-    x_bdm_value <- bdm1D(x, block_size, offset, base, k_values)
+    x_bdm_value <- bdm1D(x, block_size, offset, base)
     x_char_vector <- unlist(str_split(x, pattern = ""))
 
     perturbations <- c()
@@ -27,7 +26,7 @@ calculate_info_bits <- function(x, block_size, offset, base) {
         perturbations <- c(perturbations, back)
     }
 
-    perturbations_bdm_values <- unlist(lapply(perturbations, bdm1d, block_size, offset, base, k_values))
+    perturbations_bdm_values <- unlist(lapply(perturbations, bdm1D, block_size, offset, base))
 
     bdm_differences <- x_bdm_value - perturbations_bdm_values
 

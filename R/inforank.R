@@ -44,8 +44,8 @@ inforank <- function(x, what, block_size, offset, base) {
     } else if (is.character(x)) {
         # Include here perturbations on strings
         if (missing(what)) {
-            if (!is.null(base)) {
-                if (is.null(block_size) && is.null(offset)) {
+            if (!missing(base)) {
+                if (missing(block_size) && missing(offset)) {
                     block_size <- 4
                     offset <- 4
                 } else if (xor(is.null(block_size), is.null(offset))) {
