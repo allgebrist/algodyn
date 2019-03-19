@@ -1,4 +1,19 @@
 
+
+
+#' Algorithmic Information Ranking (InfoRank)
+#'
+#' @param x string, igraph object or valid adjacency matrix
+#' @param what graph elements to be removed (i.e. edges or vertices)
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#' @param base
+#'
+#' @return
+#' @export
+#'
+#' @examples
+
 inforank <- function(x, what, block_size, offset, base) {
 
     inforank_df <- c()
@@ -17,15 +32,15 @@ inforank <- function(x, what, block_size, offset, base) {
             stop("ERROR: A block size and offset should be provided to the function.")
         }
         # Perturbations on graphs
-        if (what = 'vertices') {
+        if (what == 'vertices') {
             inforank_df <- calculate_info_vertices(x, block_size, offset)
             inforank_df$inforank <- rank(-as.numeric(inforank_df$bdm_difference), ties.method = "min")
-        } else if (what = 'edges' || missing(what)) {
+        } else if (what == 'edges' || missing(what)) {
             inforank_df <- calculate_info_edges(x, block_size, offset)
             inforank_df$inforank <- rank(-as.numeric(inforank_df$bdm_difference), ties.method = "min")
         } else {
             stop("ERROR: The ranking should be performed according to the contributions of either vertices or edges.")
-        }!
+        }
     } else if (is.character(x)) {
         # Include here perturbations on strings
         if (missing(what)) {
