@@ -1,7 +1,9 @@
 
-#' Title
+
+
+#' Median Absolute Deviation (MAD)
 #'
-#' @param x
+#' @param x numeric vector
 #'
 #' @return
 #' @export
@@ -11,22 +13,17 @@
 #'
 
 median_absolute_deviation <- function(x) {
-    dist_from_median <- c()
-    for(i in 1:length(x)) {
-        dist_from_median <- abs(x[i]-median(x))
-    }
-
-    return(median(dist_from_median))
+    return(median(abs(x-median(x))))
 }
 
 
 
-#' Title
+#' Calculate Relative Reprogrammability
 #'
-#' @param x
-#' @param what
-#' @param block_size
-#' @param offset
+#' @param x an igraph object
+#' @param what graph elements to be removed (i.e. edges or vertices)
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #'
 #' @return
 #' @export

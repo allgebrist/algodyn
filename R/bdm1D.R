@@ -3,7 +3,6 @@ maxKnownKs <- read.csv("data/maxKnownKs.csv")
 # Erase useless column
 maxKnownKs$X <- NULL
 
-
 count_symbols <- function(x) {
     return(length(table(strsplit(x, NULL))))
 }
@@ -104,7 +103,7 @@ normalize_string <- function(x) {
 }
 
 # Get BDM value of a given string 'x' after normalizing it
-bdm1D <- function(x, block_size, offset, base){
+bdm1D <- function(x, block_size, offset, base) {
 
     splitted_string <- split_string(x, block_size, offset)
     normalized_string <- unlist(lapply(splitted_string, normalize_string))
