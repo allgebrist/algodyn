@@ -1,3 +1,4 @@
+
 maxKnownKs <- read.csv("data/maxKnownKs.csv")
 # Erase useless column
 maxKnownKs$X <- NULL
