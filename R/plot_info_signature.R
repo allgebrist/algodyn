@@ -7,28 +7,29 @@
 #'
 #' @param x an igraph object
 #' @param what graph elements to be removed (i.e. edges or vertices)
-#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method
-#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method
-#'
-#' @return
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #'
 #' @details The information signature \eqn{\sigma(G)} of graph \eqn{G} is the distribution of information values for the edges of \eqn{G}.
-#'
 #'
 #' @export
 #'
 #' @examples
-#'
+#' \dontrun{
+#' require(igraph)
+#' frucht_graph = make_graph('Frucht')
+#' plot_info_signature(frucht_graph, 'edges')
+#' }
 #'
 
 plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 
     is <- info_signature(x, what, block_size, offset)
-
-    plot(log(abs(is$bdm_difference)), xlab = "edges sorted by max info value", ylab = "log info values",
+    # We only take into account those elements with bdm_difference > 0 (see info_signature.R)
+    plot(log(is$bdm_difference), xlab = "edges sorted by max info value", ylab = "log info values",
          main = "Information signature", col = "red")
 
-    lines(log(abs(is$bdm_difference)), col = "red")
+    lines(log(is$bdm_difference), col = "red")
 
 }
 
@@ -40,13 +41,17 @@ plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 #'
 #' @param x an igraph object
 #' @param what graph elements to be removed (i.e. edges or vertices)
-#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method
-#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #'
-#' @return
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' require(igraph)
+#' meredith = make_graph('Meredith')
+#' plot_cutting_places(make_graph('Meredith'), 'vertices')
+#' }
 #'
 
 plot_cutting_places <- function(x, what, block_size = 4, offset = 4) {

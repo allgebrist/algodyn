@@ -1,4 +1,18 @@
 
+
+
+#' Calculate information contribution of edges
+#'
+#' @param x an igraph object or a valid adjacency matrix
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
+
 calculate_info_edges <- function(x, block_size = 4, offset = 4) {
 
     x_adj_matrix <- c()

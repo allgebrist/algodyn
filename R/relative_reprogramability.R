@@ -1,4 +1,15 @@
 
+#' Title
+#'
+#' @param x
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
+#'
+
 median_absolute_deviation <- function(x) {
     dist_from_median <- c()
     for(i in 1:length(x)) {
@@ -7,6 +18,22 @@ median_absolute_deviation <- function(x) {
 
     return(median(dist_from_median))
 }
+
+
+
+#' Title
+#'
+#' @param x
+#' @param what
+#' @param block_size
+#' @param offset
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
+#'
 
 relative_reprogramability <- function(x, what, block_size = 4, offset = 4) {
 
