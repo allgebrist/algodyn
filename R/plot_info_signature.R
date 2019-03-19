@@ -1,4 +1,26 @@
 
+
+
+#' Plot information signature
+#'
+#' This function plots the information signature of a given graph.
+#'
+#' @param x an igraph object
+#' @param what graph elements to be removed (i.e. edges or vertices)
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method
+#'
+#' @return
+#'
+#' @details The information signature \eqn{\sigma(G)} of graph \eqn{G} is the distribution of information values for the edges of \eqn{G}.
+#'
+#'
+#' @export
+#'
+#' @examples
+#'
+#'
+
 plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 
     is <- info_signature(x, what, block_size, offset)
@@ -16,6 +38,23 @@ plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
     lines(log(is$bdm_difference) + 80, col = "red")
 
 }
+
+
+
+#' Plot the cutting places
+#'
+#' This function plots the differences of consecutive values of the information signature
+#'
+#' @param x an igraph object
+#' @param what graph elements to be removed (i.e. edges or vertices)
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
 
 plot_cutting_places <- function(x, what, block_size = 4, offset = 4) {
 
