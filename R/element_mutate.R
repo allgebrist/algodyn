@@ -1,4 +1,24 @@
 
+
+
+#' Title
+#'
+#' @param x
+#' @param index
+#' @param mutations
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' # Binary string
+#' element_mutate("1001", c(1,2,3,4))
+#' # Non-binary string:
+#' element_mutate("abcd", c(1,2), c("b","a"))
+#' }
+#'
+
 element_mutate <- function(x, index, mutations) {
 
     x_characters <- unlist(str_split(x, pattern = ""))
