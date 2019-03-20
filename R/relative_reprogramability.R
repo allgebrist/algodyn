@@ -1,23 +1,6 @@
 
 
 
-#' Median Absolute Deviation (MAD)
-#'
-#' @param x numeric vector
-#'
-#' @return
-#' @export
-#'
-#' @examples
-#'
-#'
-
-median_absolute_deviation <- function(x) {
-    return(median(abs(x-median(x))))
-}
-
-
-
 #' Calculate Relative Reprogrammability
 #'
 #' @param x an igraph object
@@ -34,15 +17,32 @@ median_absolute_deviation <- function(x) {
 
 relative_reprogramability <- function(x, what, block_size = 4, offset = 4) {
 
-    is <- info_signature(x, what, block_size, offset)
+  is <- info_signature(x, what, block_size, offset)
 
-    mad <- median_absolute_deviation(is$bdm_difference)
-    maxima <- max(is$bdm_difference)
+  mad <- median_absolute_deviation(is$bdm_difference)
+  maxima <- max(is$bdm_difference)
 
-    if (maxima != 0) {
-        return(mad / maxima)
-    } else {
-        return(0)
-    }
+  if (maxima != 0) {
+    return(mad / maxima)
+  } else {
+    return(0)
+  }
 
+}
+
+
+
+#' Median Absolute Deviation (MAD)
+#'
+#' @param x numeric vector
+#'
+#' @return
+#' @export
+#'
+#' @examples
+#'
+#'
+
+median_absolute_deviation <- function(x) {
+    return(median(abs(x-median(x))))
 }

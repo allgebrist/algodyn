@@ -10,6 +10,7 @@
 #' @export
 #'
 #' @examples
+#'
 
 calculate_info_bits <- function(x, block_size, offset, base) {
 

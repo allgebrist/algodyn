@@ -12,6 +12,10 @@
 #' @export
 #'
 #' @examples
+#' require(acss)
+#' require(stringr)
+#' bin_string <- "1001010101000010101001"
+#' bdm1D(bin_string, 12, 11, 2)
 #'
 
 # Get BDM value of a given string 'x' after normalizing it
