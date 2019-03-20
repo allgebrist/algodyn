@@ -47,6 +47,3 @@ element_mutate <- function(x, index, mutations) {
     return(x_mutated)
 }
 
-# TESTS
-# Binary string: element_mutate("1001", c(1,2,3,4))
-# Non-binary string: element_mutate("abcd", c(1,2), c("b","a"))
