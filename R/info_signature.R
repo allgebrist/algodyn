@@ -1,5 +1,5 @@
 
-#' Title
+#' Compute the information signature
 #'
 #' @param x an igraph object
 #' @param what graph elements to be removed (i.e. edges or vertices)
