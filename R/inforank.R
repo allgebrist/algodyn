@@ -9,12 +9,14 @@
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #' @param base number of distinct characters in \code{x} when \code{x} is a string
 #'
+#' @details
+#'
 #' @return
 #' @export
 #'
 #' @examples
 
-inforank <- function(x, what, block_size, offset, base) {
+inforank <- function(x, block_size, offset, base, what) {
 
     inforank_df <- c()
 
@@ -42,7 +44,7 @@ inforank <- function(x, what, block_size, offset, base) {
             stop("ERROR: The ranking should be performed according to the contributions of either vertices or edges.")
         }
     } else if (is.character(x)) {
-        # Include here perturbations on strings
+        # Perturbations on strings
         if (missing(what)) {
             if (!missing(base)) {
                 if (missing(block_size) && missing(offset)) {
@@ -51,7 +53,7 @@ inforank <- function(x, what, block_size, offset, base) {
                 } else if (xor(missing(block_size), missing(offset))) {
                     stop("ERROR: A block size and offset should be provided to the function.")
                 }
-                # Remove characters
+                # Get characters from string
                 x_characters <- unlist(str_split(x, pattern = ""))
                 inforank_df <- calculate_info_bits(x, block_size, offset, base)
                 inforank_df$inforank <- rank(-as.numeric(inforank_df$bdm_difference), ties.method = "min")

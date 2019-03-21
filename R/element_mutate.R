@@ -7,6 +7,8 @@
 #' @param index
 #' @param mutations
 #'
+#' @details
+#'
 #' @return
 #' @export
 #'

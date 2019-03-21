@@ -6,6 +6,8 @@
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)
 #' @param base number of symbols in the alphabet over which \code{x} is defined
 #'
+#' @details
+#'
 #' @return
 #' @export
 #'
@@ -29,9 +31,9 @@ calculate_info_bits <- function(x, block_size, offset, base) {
 
     perturbations_bdm_values <- unlist(lapply(perturbations, bdm1D, block_size, offset, base))
 
-    bdm_differences <- x_bdm_value - perturbations_bdm_values
+    bdm_difference <- x_bdm_value - perturbations_bdm_values
 
-    bdm_df <- data.frame(perturbations = perturbations, bdm_differences = bdm_differences, stringsAsFactors = FALSE)
+    bdm_df <- data.frame(perturbations = perturbations, bdm_difference = bdm_difference, stringsAsFactors = FALSE)
 
     return(bdm_df)
 }

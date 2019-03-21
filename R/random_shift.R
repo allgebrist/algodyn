@@ -8,6 +8,8 @@
 #' @param seed
 #' @param elements
 #'
+#' @details
+#'
 #' @return
 #' @export
 #'

@@ -8,6 +8,8 @@
 #' @param column_position
 #' @param replacement
 #'
+#' @details
+#'
 #' @return
 #' @export
 #'
