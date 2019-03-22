@@ -1,4 +1,6 @@
 
+
+
 #' Compute the information signature
 #'
 #' @param x an igraph object
@@ -6,7 +8,7 @@
 #' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #'
-#' @details
+#' @details The information signature \eqn{\sigma(G)} of graph \eqn{G} is the distribution of information values for either the edges or vertices of \eqn{G}.
 #'
 #' @return
 #' @export

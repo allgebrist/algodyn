@@ -1,4 +1,6 @@
 
+
+
 #' Calculate information contribution of bits
 #'
 #' @param x string
