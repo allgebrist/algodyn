@@ -3,9 +3,9 @@
 
 #' Title
 #'
-#' @param x
-#' @param index
-#' @param mutations
+#' @param x string
+#' @param index vector containing the positions of the elements to be replaced
+#' @param mutations vector containing the replacements
 #'
 #' @details
 #'
