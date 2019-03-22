@@ -8,7 +8,7 @@
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)
 #' @param base number of symbols in the alphabet over which \code{x} is defined
 #'
-#' @details The information contribution of a character \eqn{i} to a string \eqn{s} is given by \eqn{I(s,i)=C(s)-C(s-i)}, where \eqn{C(s)} denotes the information content of \eqn{s} and \eqn{C(s-i)} the information content of \eqn{s} after removing \eqn{i} from \equn{s}.
+#' @details The information contribution of a character \eqn{i} to a string \eqn{s} is given by \eqn{I(s,i)=C(s)-C(s-i)}, where \eqn{C(s)} denotes the information content of \eqn{s} and \eqn{C(s-i)} the information content of \eqn{s} after removing \eqn{i} from \eqn{s}.
 #'
 #' @return
 #' @export
