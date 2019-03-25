@@ -1,22 +1,22 @@
 
 
 
-#' Calculate information contribution of bits
+#' Calculate information contribution of symbols
 #'
 #' @param x string
-#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)
-#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)
-#' @param base number of symbols in the alphabet over which \code{x} is defined
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM).
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM).
+#' @param base number of symbols in the alphabet over which \code{x} is defined.
 #'
-#' @details The information contribution of a character \eqn{i} to a string \eqn{s} is given by \eqn{I(s,i)=C(s)-C(s-i)}, where \eqn{C(s)} denotes the information content of \eqn{s} and \eqn{C(s-i)} the information content of \eqn{s} after removing \eqn{i}.
+#' @details The information contribution of a symbol \eqn{i} to a string \eqn{s} is given by \eqn{I(s,i)=C(s)-C(s-i)}, where \eqn{C(s)} denotes the information content of \eqn{s} and \eqn{C(s-i)} the information content of \eqn{s} after removing \eqn{i}.
 #'
-#' @return
+#' @return A data frame containing the perturbations on the original string's characters and their corresponding information contributions.
 #' @export
 #'
 #' @examples
 #'
 
-calculate_info_bits <- function(x, block_size, offset, base) {
+calculate_info_symbols <- function(x, block_size, offset, base) {
 
     x_bdm_value <- bdm1D(x, block_size, offset, base)
     x_char_vector <- unlist(str_split(x, pattern = ""))
