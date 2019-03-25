@@ -3,10 +3,10 @@
 
 #' Calculate Relative Reprogrammability
 #'
-#' @param x an igraph object
-#' @param what graph elements to be removed (i.e. edges or vertices)
-#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
-#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#' @param x an igraph object.
+#' @param what graph elements to be removed (i.e. edges or vertices).
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
 #'
 #' @details
 #'
@@ -19,16 +19,16 @@
 
 relative_reprogramability <- function(x, what, block_size = 4, offset = 4) {
 
-  is <- info_signature(x, what, block_size, offset)
+    is <- info_signature(x, what, block_size, offset)
 
-  mad <- median_absolute_deviation(is$bdm_difference)
-  maxima <- max(is$bdm_difference)
+    mad <- median_absolute_deviation(is$bdm_difference)
+    maxima <- max(is$bdm_difference)
 
-  if (maxima != 0) {
-    return(mad / maxima)
-  } else {
-    return(0)
-  }
+    if (maxima != 0) {
+        return(mad / maxima)
+    } else {
+        return(0)
+    }
 
 }
 
@@ -36,9 +36,9 @@ relative_reprogramability <- function(x, what, block_size = 4, offset = 4) {
 
 #' Median Absolute Deviation (MAD)
 #'
-#' @param x numeric vector
+#' @param x numeric vector.
 #'
-#' @return
+#' @return A number corresponding to the Median Absolute Deviation (MAD) of the input vector.
 #' @export
 #'
 #' @examples

@@ -3,7 +3,7 @@
 
 #' Calculate information contribution of symbols
 #'
-#' @param x string
+#' @param x character string
 #' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM).
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM).
 #' @param base number of symbols in the alphabet over which \code{x} is defined.

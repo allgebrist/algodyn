@@ -3,15 +3,15 @@
 
 #' Algorithmic Information Ranking (InfoRank)
 #'
-#' @param x string, igraph object or valid adjacency matrix
-#' @param what graph elements to be removed (i.e. edges or vertices)
-#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
-#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
-#' @param base number of distinct characters in \code{x} when \code{x} is a string
+#' @param x string, igraph object or valid adjacency matrix.
+#' @param what graph elements to be removed (i.e. edges or vertices).
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
+#' @param base number of distinct characters in \code{x} when \code{x} is a string.
 #'
 #' @details
 #'
-#' @return
+#' @return A data frame corresponding to a ranking of the elements of the input object according to their information contribution.
 #' @export
 #'
 #' @examples

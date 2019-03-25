@@ -3,9 +3,9 @@
 
 #' Calculate information contribution of vertices
 #'
-#' @param x an igraph object or a valid adjacency matrix
-#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
-#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#' @param x an igraph object or a valid adjacency matrix.
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
 #'
 #' @details The information contribution of a vertex \eqn{v} to a graph \eqn{G} is given by \eqn{I(G,v)=C(G)-C(G-v)}, where \eqn{C(G)} denotes the information content of \eqn{G} and \eqn{C(G-v)} the information content of \eqn{G} after removing \eqn{v}.
 #' This function performs sequential perturbations (deletions) on the vertices of \eqn{G} to calculate their information contribution.

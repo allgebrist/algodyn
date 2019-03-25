@@ -3,9 +3,9 @@
 
 #' Mutate elements of a string
 #'
-#' @param x string
-#' @param index vector containing the positions of the elements to be replaced
-#' @param mutations vector containing the replacements
+#' @param x character string.
+#' @param index vector containing the positions of the elements to be replaced.
+#' @param mutations vector containing the replacements.
 #'
 #' @details
 #'
