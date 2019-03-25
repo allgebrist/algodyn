@@ -10,7 +10,7 @@
 #' @details The information contribution of an edge \eqn{e} to a graph \eqn{G} is given by \eqn{I(G,e)=C(G)-C(G-e)}, where \eqn{C(G)} denotes the information content of \eqn{G} and \eqn{C(G-e)} the information content of \eqn{G} after removing \eqn{e}.
 #' This function performs sequential perturbations (deletions) on the edges of \eqn{G} to calculate their information contribution.
 #'
-#' @return
+#' @return A data frame containing the perturbations on the original graph's edges, and their corresponding BDM values and estimated information contributions.
 #' @export
 #'
 #' @examples

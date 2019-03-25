@@ -10,7 +10,7 @@
 #' @details The information contribution of a vertex \eqn{v} to a graph \eqn{G} is given by \eqn{I(G,v)=C(G)-C(G-v)}, where \eqn{C(G)} denotes the information content of \eqn{G} and \eqn{C(G-v)} the information content of \eqn{G} after removing \eqn{v}.
 #' This function performs sequential perturbations (deletions) on the vertices of \eqn{G} to calculate their information contribution.
 #'
-#' @return
+#' @return A data frame containing the perturbations on the original graph's vertices, and their corresponding BDM values and estimated information contributions.
 #' @export
 #'
 #' @examples
