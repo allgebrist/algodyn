@@ -17,10 +17,10 @@
 #' \dontrun{
 #' # For a string
 #' x <- "hola amigo"
-#' random_shift(x, c(2,4,6,8), 22)
+#' random_shift(x, c(2,4,6,8), 157)
 #' # For a matrix
-#' A <- matrix(seq(1:16), nrow = 4, ncol = 4, byrow = TRUE)
-#' random_shift(A, c(1, 3), 123)
+#' A <- matrix(seq(1:100), nrow = 10, ncol = 10, byrow = TRUE)
+#' random_shift(A, c(1, 3), 56)
 #' }
 #'
 

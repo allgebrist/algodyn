@@ -7,10 +7,10 @@
 #' @param index vector containing the positions of the elements to be replaced.
 #' @param mutations vector containing the replacements.
 #'
-#' @details
+#' @details This function allows one to replace the characters of a given string at certain positions with new characters.
+#' In case the string is binary, the default replacement is just the negation of the bits at each desired locations.
 #'
-#' @return
-#' @export
+#' @return A character string with changes specified by the user at desired positions.
 #'
 #' @examples
 #' \dontrun{
@@ -20,7 +20,7 @@
 #' element_mutate("abcd", c(1,2), c("b","a"))
 #' }
 #'
-
+#' @export
 element_mutate <- function(x, index, mutations) {
 
     x_characters <- unlist(str_split(x, pattern = ""))
