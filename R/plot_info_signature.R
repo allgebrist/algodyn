@@ -3,14 +3,12 @@
 
 #' Plot information signature
 #'
-#' This function plots the information signature of a given graph.
-#'
 #' @param x an igraph object
 #' @param what graph elements to be removed (i.e. edges or vertices)
 #' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #'
-#' @details
+#' @details This function plots the information signature of a given graph.
 #'
 #' @examples
 #' \dontrun{
@@ -35,14 +33,12 @@ plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 
 #' Plot the cutting places
 #'
-#' This function plots the differences of consecutive values of the information signature
-#'
 #' @param x an igraph object
 #' @param what graph elements to be removed (i.e. edges or vertices)
 #' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #'
-#' @details
+#' @details This function plots the differences of consecutive values of the information signature.
 #'
 #' @examples
 #' \dontrun{
@@ -59,9 +55,9 @@ plot_cutting_places <- function(x, what, block_size = 4, offset = 4) {
     diffs <- c()
 
     for (i in 1:nrow(is)) {
-      if (i != nrow(is)) {
-        diffs <- c(diffs, is$bdm_difference[i] - is$bdm_difference[i + 1])
-      }
+        if (i != nrow(is)) {
+          diffs <- c(diffs, is$bdm_difference[i] - is$bdm_difference[i + 1])
+        }
     }
 
     plot(diffs, xlab = "edges sorted by max info value", ylab = "sequential info differences",
