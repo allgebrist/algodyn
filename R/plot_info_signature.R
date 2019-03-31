@@ -45,8 +45,8 @@ plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 #'
 #' @examples
 #' \dontrun{
-#' meredith = make_graph('Meredith')
-#' plot_cutting_places(make_graph('Meredith'), 'vertices')
+#' meredith_graph = make_graph('Meredith')
+#' plot_cutting_places(meredith_graph, 'vertices')
 #' }
 #'
 #' @export
