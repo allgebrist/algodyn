@@ -11,7 +11,6 @@
 #' @details
 #'
 #' @return
-#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -23,7 +22,7 @@
 #' random_shift(A, c(1, 3), 56)
 #' }
 #'
-
+#' @export
 random_shift <- function(x, position, seed, elements) {
 
     set.seed(seed)

@@ -11,11 +11,10 @@
 #' @details
 #'
 #' @return
-#' @export
 #'
 #' @examples
 #'
-
+#' @export
 info_spectra <- function(x, what, block_size = 4, offset = 4) {
 
     spectra <- c()
