@@ -10,7 +10,7 @@
 #'
 #' @details This function gives
 #'
-#' @return
+#' @return A number corresponding to the estimated Kolmogorov-Chaitin complexity of the input string.
 #' @export
 #'
 #' @examples

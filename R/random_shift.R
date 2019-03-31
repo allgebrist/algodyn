@@ -3,9 +3,9 @@
 
 #' Title
 #'
-#' @param x
-#' @param position
-#' @param seed
+#' @param x string or matrix.
+#' @param position positions of elements to be replaced.
+#' @param seed seed state.
 #' @param elements
 #'
 #' @details

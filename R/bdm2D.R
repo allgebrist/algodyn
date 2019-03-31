@@ -9,7 +9,7 @@
 #'
 #' @details
 #'
-#' @return
+#' @return A number corresponding to the estimated Kolmogorov-Chaitin complexity of the input matrix.
 #' @export
 #'
 #' @examples
