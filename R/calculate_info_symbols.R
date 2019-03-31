@@ -14,6 +14,7 @@
 #'
 #' @examples
 #' \dontrun{
+#' require(acss)
 #' require(stringr)
 #' ex_str <- "1010010111010"
 #' calculate_info_symbols(ex_str, 12, 11, 2)

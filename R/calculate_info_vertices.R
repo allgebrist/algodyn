@@ -11,11 +11,15 @@
 #' This function performs sequential perturbations (deletions) on the vertices of \eqn{G} to calculate their information contribution.
 #'
 #' @return A data frame containing the perturbations on the original graph's vertices, and their corresponding BDM values and estimated information contributions.
-#' @export
 #'
 #' @examples
+#' \dontrun{
+#' require(igraph)
+#' tutte_graph <- make_graph("Tutte")
+#' calculate_info_vertices(tutte_graph)
+#' }
 #'
-
+#' @export
 calculate_info_vertices <- function(x, block_size = 4, offset = 4) {
 
     x_adj_matrix <- c()
@@ -43,7 +47,7 @@ calculate_info_vertices <- function(x, block_size = 4, offset = 4) {
         x_deleted_vertex <- delete_vertices(x, V(x)[i])
 
         deleted_vertex_matrix <- as.matrix(as_adjacency_matrix(x_deleted_vertex))
-        deleted_vertex_bdm_value <- bdm2d(deleted_vertex_matrix, block_size, offset)
+        deleted_vertex_bdm_value <- bdm2D(deleted_vertex_matrix, block_size, offset)
 
         vertex_deletions_df[i, ]$bdm_value <- deleted_vertex_bdm_value
         vertex_deletions_df[i, ]$bdm_difference <- x_bdm_value - deleted_vertex_bdm_value
