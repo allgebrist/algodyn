@@ -8,16 +8,19 @@
 #' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
 #'
-#' @details
+#' @details The Relative Reprogrammability index measures the shape of a graph's information signature.
 #'
-#' @return
-#' @export
+#' @import igraph
+#' @return A numeric corresponding to the Relative Reprogrammability index of the input graph.
 #'
 #' @examples
+#' \dontrun{
+#' robertson_graph <- make_graph("Robertson")
+#' relative_reprogrammability(robertson_graph, 'edges')
+#' }
 #'
-#'
-
-relative_reprogramability <- function(x, what, block_size = 4, offset = 4) {
+#' @export
+relative_reprogrammability <- function(x, what, block_size = 4, offset = 4) {
 
     is <- info_signature(x, what, block_size, offset)
 
@@ -33,18 +36,7 @@ relative_reprogramability <- function(x, what, block_size = 4, offset = 4) {
 }
 
 
-
-#' Median Absolute Deviation (MAD)
-#'
-#' @param x numeric vector.
-#'
-#' @return A number corresponding to the Median Absolute Deviation (MAD) of the input vector.
-#' @export
-#'
-#' @examples
-#'
-#'
-
+# Compute the Median Absolute Deviation (MAD)
 median_absolute_deviation <- function(x) {
     return(median(abs(x-median(x))))
 }

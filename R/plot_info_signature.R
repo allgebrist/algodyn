@@ -41,9 +41,10 @@ plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 #'
 #' @details This function plots the differences of consecutive values of the information signature.
 #'
+#' @import igraph
+#'
 #' @examples
 #' \dontrun{
-#' require(igraph)
 #' meredith = make_graph('Meredith')
 #' plot_cutting_places(make_graph('Meredith'), 'vertices')
 #' }

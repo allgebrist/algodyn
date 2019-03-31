@@ -11,11 +11,13 @@
 #'
 #' @details
 #'
+#' @import igraph
+#' @import stringr
 #' @return A data frame corresponding to a ranking of the elements of the input object according to their information contribution.
-#' @export
 #'
 #' @examples
-
+#'
+#' @export
 inforank <- function(x, block_size, offset, base, what) {
 
     inforank_df <- c()
