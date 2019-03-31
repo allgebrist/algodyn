@@ -1,7 +1,7 @@
 
 
 
-#' Calculate the Kolmogorov-Chaitin Complexity of a matrix
+#' Calculate the Kolmogorov-Chaitin complexity of a matrix
 #'
 #' @param mat a valid matrix
 #' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
