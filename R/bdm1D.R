@@ -10,12 +10,12 @@
 #'
 #' @details This function gives an estimation of the Kolmogorov-Chaitin complexity of a string using the 1-dimensional Block Decomposition Method (BDM).
 #'
+#' @import acss
+#' @import stringr
 #' @return A number corresponding to the estimated Kolmogorov-Chaitin complexity of the input string.
 #'
 #' @examples
 #' \dontrun{
-#' require(acss)
-#' require(stringr)
 #' bin_string <- "1001010101000010101001"
 #' bdm1D(bin_string, 12, 11, 2)
 #' }

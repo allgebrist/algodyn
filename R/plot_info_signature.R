@@ -10,9 +10,10 @@
 #'
 #' @details This function plots the information signature of a given graph.
 #'
+#' @import igraph
+#'
 #' @examples
 #' \dontrun{
-#' require(igraph)
 #' frucht_graph = make_graph('Frucht')
 #' plot_info_signature(frucht_graph, 'edges')
 #' }

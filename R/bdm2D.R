@@ -9,11 +9,11 @@
 #'
 #' @details This function gives an estimation of the Kolmogorov-Chaitin complexity of a matrix using the 2-dimensional Block Decomposition Method (BDM).
 #'
+#' @import purrr
 #' @return A number corresponding to the estimated Kolmogorov-Chaitin complexity of the input matrix.
 #'
 #' @examples
 #' \dontrun{
-#' require(purrr)
 #' set.seed(42)
 #' m99 <- apply(matrix(0, 9, 9), c(1,2), function(x) sample(c(0,1),1))
 #' bdm2D(m99, 3, 3)

@@ -10,12 +10,13 @@
 #'
 #' @details The information signature \eqn{\sigma(G)} of graph \eqn{G} is the distribution of information values for either the edges or vertices of \eqn{G}.
 #'
+#' @import igraph
 #' @return
-#' @export
+#'
 #'
 #' @examples
 #'
-
+#' @export
 info_signature <- function(x, what, block_size = 4, offset = 4) {
 
     signature <- c()

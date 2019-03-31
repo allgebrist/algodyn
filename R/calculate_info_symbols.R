@@ -10,12 +10,12 @@
 #'
 #' @details The information contribution of a symbol \eqn{i} to a string \eqn{s} is given by \eqn{I(s,i)=C(s)-C(s-i)}, where \eqn{C(s)} denotes the information content of \eqn{s} and \eqn{C(s-i)} the information content of \eqn{s} after removing \eqn{i}.
 #'
+#' @import acss
+#' @import stringr
 #' @return A data frame containing the perturbations on the original string's characters and their corresponding information contributions.
 #'
 #' @examples
 #' \dontrun{
-#' require(acss)
-#' require(stringr)
 #' ex_str <- "1010010111010"
 #' calculate_info_symbols(ex_str, 12, 11, 2)
 #' }
