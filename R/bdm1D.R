@@ -8,10 +8,9 @@
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)
 #' @param base number of symbols in the alphabet over which \code{x} is defined
 #'
-#' @details This function gives
+#' @details This function gives an estimation of the Kolmogorov-Chaitin complexity of a string using the 1-dimensional Block Decomposition Method (BDM).
 #'
 #' @return A number corresponding to the estimated Kolmogorov-Chaitin complexity of the input string.
-#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -21,8 +20,7 @@
 #' bdm1D(bin_string, 12, 11, 2)
 #' }
 #'
-
-# Get BDM value of a given string 'x' after normalizing it
+#' @export
 bdm1D <- function(x, block_size, offset, base) {
 
     splitted_string <- split_string(x, block_size, offset)

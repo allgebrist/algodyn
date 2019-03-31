@@ -12,8 +12,6 @@
 #'
 #' @details
 #'
-#' @export
-#'
 #' @examples
 #' \dontrun{
 #' require(igraph)
@@ -21,7 +19,7 @@
 #' plot_info_signature(frucht_graph, 'edges')
 #' }
 #'
-
+#' @export
 plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 
     is <- info_signature(x, what, block_size, offset)
@@ -46,8 +44,6 @@ plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 #'
 #' @details
 #'
-#' @export
-#'
 #' @examples
 #' \dontrun{
 #' require(igraph)
@@ -55,7 +51,7 @@ plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 #' plot_cutting_places(make_graph('Meredith'), 'vertices')
 #' }
 #'
-
+#' @export
 plot_cutting_places <- function(x, what, block_size = 4, offset = 4) {
 
     is <- info_signature(x, what, block_size, offset)

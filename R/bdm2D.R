@@ -7,10 +7,9 @@
 #' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #'
-#' @details
+#' @details This function gives an estimation of the Kolmogorov-Chaitin complexity of a matrix using the 2-dimensional Block Decomposition Method (BDM).
 #'
 #' @return A number corresponding to the estimated Kolmogorov-Chaitin complexity of the input matrix.
-#' @export
 #'
 #' @examples
 #' \dontrun{
@@ -20,8 +19,7 @@
 #' bdm2D(m99, 3, 3)
 #' }
 #'
-
-# Get BDM value of a given matrix 'mat'
+#' @export
 bdm2D <- function(mat, block_size, offset) {
 
     parts <- my_partition(mat, block_size, offset)
@@ -40,22 +38,6 @@ bdm2D <- function(mat, block_size, offset) {
     }
 
     return(bdm)
-}
-
-
-# Calculate the block entropy
-block_entropy <- function(mat, block_size, offset) {
-
-    parts <- my_partition(mat, block_size, offset)
-    flat_squares <- unlist(lapply(parts, stringify))
-
-    squares_tally <- as.data.frame(table(flat_squares))
-    rownames(squares_tally) <- squares_tally$flat_square
-    squares_tally$flat_squares <- NULL
-
-    probabilities = squares_tally[, 1] / nrow(squares_tally)
-
-    return(-sum(probabilities * log2(probabilities)))
 }
 
 
@@ -82,6 +64,7 @@ ind <- function(mat_dim, block_size, offset) {
     Map(`:`, seq(1, mat_dim - block_size + 1, by = offset),
         seq(block_size, mat_dim, by = offset))
 }
+
 
 # Load 3 x 3 CTM values
 three_by_three_ctm <- read.csv("data/K-3x3.csv",
