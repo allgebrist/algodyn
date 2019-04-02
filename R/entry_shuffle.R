@@ -1,7 +1,7 @@
 
 
 
-#' Title
+#' Entry shuffle
 #'
 #' @param x
 #' @param row_position

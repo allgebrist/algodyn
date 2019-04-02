@@ -1,7 +1,7 @@
 
 
 
-#' Title
+#' Random shift
 #'
 #' @param x string or matrix.
 #' @param position positions of elements to be replaced.
