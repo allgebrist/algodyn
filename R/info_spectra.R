@@ -8,11 +8,16 @@
 #' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
 #'
-#' @details
+#' @details The information spectra gives the full list of information values for the edges or vertices of a graph, ordered decreasingly by information contribution.
 #'
-#' @return
+#' @import igraph
+#' @return A data frame corresponding to the information spectra of the input graph.
 #'
 #' @examples
+#' \dontrun{
+#' frank <- make_graph("Franklin")
+#' info_spectra(frank, what = 'vertices')
+#' }
 #'
 #' @export
 info_spectra <- function(x, what, block_size = 4, offset = 4) {
