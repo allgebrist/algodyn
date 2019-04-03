@@ -6,12 +6,13 @@
 #' @param x string or matrix.
 #' @param position positions of elements to be replaced.
 #' @param seed seed state.
-#' @param elements
+#' @param elements vector corresponding to the alphabet from which the replacement elements are taken from.
 #'
-#' @details
+#' @details This function replaces one or more bits of a given string or rows of a given matrix with pseudorandom elements from an alphabet.
+#' If the alphabet is not specified in advance, the default binary alphabet, consisting of "0" and "1", will be used.
 #'
-#' @return
-#'
+#' @return A string or matrix with pseudorandomly generated replacements of symbols or rows.
+#
 #' @examples
 #' \dontrun{
 #' # For a string
@@ -30,7 +31,7 @@ random_shift <- function(x, position, seed, elements) {
     if (missing(elements)) {
         elements <- c(0, 1)
         if (is.character(x)) {
-            elements <- unlist(lapply(c(0, 1), toString))
+            elements <- unlist(lapply(elements, toString))
         }
     }
 
