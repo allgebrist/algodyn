@@ -20,9 +20,6 @@
 #' # Compute the information signature of the Folkman graph
 #' folkman <- make_graph("Folkman")
 #' is <- info_signature(folkman)
-#'
-#' # Verify that
-#' nrow(info_signature(make_full_graph(5), what = 'vertices'))
 #' }
 #'
 #' @export
