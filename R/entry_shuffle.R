@@ -3,14 +3,14 @@
 
 #' Entry shuffle
 #'
-#' @param x
-#' @param row_position
-#' @param column_position
-#' @param replacement
+#' @param x a matrix.
+#' @param row_position an integer indicating the row's index.
+#' @param column_position an integer indicating the column's index.
+#' @param replacement the entry to be inserted into the matrix.
 #'
 #' @details Replace a matrix entry.
 #'
-#' @return A matrix with
+#' @return A matrix with a modified entry.
 #'
 #' @examples
 #' \dontrun{
