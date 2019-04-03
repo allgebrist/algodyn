@@ -22,11 +22,11 @@
 plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 
     is <- info_signature(x, what, block_size, offset)
-    # We only take into account those elements with bdm_difference > 0 (see info_signature.R)
-    plot(log(is$bdm_difference), xlab = "edges sorted by max info value", ylab = "log info values",
+    # We only plot the information contribution of the chosen elements (see info_signature.R)
+    plot(is$bdm_difference, xlab = "edges ranked by contribution", ylab = "information contribution",
          main = "Information signature", col = "red")
 
-    lines(log(is$bdm_difference), col = "red")
+    lines(is$bdm_difference, col = "red")
 
 }
 
@@ -46,7 +46,7 @@ plot_info_signature <- function(x, what, block_size = 4, offset = 4) {
 #' @examples
 #' \dontrun{
 #' meredith_graph = make_graph('Meredith')
-#' plot_cutting_places(meredith_graph, 'vertices')
+#' plot_cutting_places(meredith_graph)
 #' }
 #'
 #' @export
@@ -62,7 +62,7 @@ plot_cutting_places <- function(x, what, block_size = 4, offset = 4) {
         }
     }
 
-    plot(diffs, xlab = "edges sorted by max info value", ylab = "sequential info differences",
+    plot(diffs, xlab = "edges ranked by contribution", ylab = "difference between contributions",
          main = "Cutting places", col = "blue")
 
     lines(diffs, col = "blue")
