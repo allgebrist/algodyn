@@ -3,9 +3,9 @@
 
 #' Calculate the Kolmogorov-Chaitin complexity of a matrix
 #'
-#' @param mat a valid matrix
-#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
-#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)
+#' @param mat a valid matrix.
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).
 #'
 #' @details This function gives an estimation of the Kolmogorov-Chaitin complexity of a matrix using the 2-dimensional Block Decomposition Method (BDM).
 #'
@@ -31,7 +31,6 @@ bdm2D <- function(mat, block_size, offset) {
     colnames(three_by_three_ctm) <- c("square", "CTM")
     rownames(three_by_three_ctm) <- three_by_three_ctm$square
     three_by_three_ctm$square <- NULL
-
 
     # Load 4 x 4 CTM values
     four_by_four_ctm <- read.csv("data/K-4x4.csv",

@@ -3,10 +3,10 @@
 
 #' Calculate the Kolmogorov-Chaitin complexity of a string
 #'
-#' @param x character string
-#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)
-#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)
-#' @param base number of symbols in the alphabet over which \code{x} is defined
+#' @param x character string.
+#' @param block_size block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM).
+#' @param offset offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM).
+#' @param base number of symbols in the alphabet over which \code{x} is defined.
 #'
 #' @details This function gives an estimation of the Kolmogorov-Chaitin complexity of a string using the 1-dimensional Block Decomposition Method (BDM).
 #'
