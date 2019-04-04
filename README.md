@@ -8,7 +8,7 @@ This extension is brought to you by the [Algorithmic Dynamics Lab](https://www.a
 
 ### How to cite this package
 
-Zenil, Hector, Zea, Allan A., Rueda-Toicen, Antonio (2019). Algodyn: Algorithmic Information Dynamics with the R Language. DOI: 10.5281/zenodo.2629312.
+Zenil, Hector; Zea, Allan A.; Rueda-Toicen, Antonio (2019). Algodyn: Algorithmic Information Dynamics with the R Language. DOI: 10.5281/zenodo.2629312.
 
 #### Maintainer: Allan A. Zea (allan.zea [at] ciens.ucv.ve)
 
