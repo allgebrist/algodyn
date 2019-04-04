@@ -4,11 +4,10 @@ Title: Algorithmic Information Dynamics
 Version: 0.1.0
 Authors@R: c(person("Allan A.", "Zea", role = c("aut", "cre"), 
                     email = "allan.zea@ciens.ucv.ve"),
-             person("Antonio", "Rueda-Toicen", role = c("ctb")),
-             person("Hector", "Zenil", role = c("aut")))
+             person("Hector", "Zenil", role = c("aut")),
+	     person("Antonio", "Rueda-Toicen", role = c("ctb")))
 Maintainer: Allan A. Zea <allan.zea@ciens.ucv.ve>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: ​Algorithmic Information Dynamics (AID) is an exciting new field put forward by the Algorithmic Dynamics Lab of the Karolinska Institute, based upon some of the most mathematically mature and powerful theories at the intersection of computability, algorithmic information, dynamic systems and algebraic graph theory to tackle some of the challenges of causation from a model-driven mechanistic perspective, in particular, in application to behavioural, evolutionary and molecular reprogramming. This package contains some relevant functions in the current AID literature.
 Imports: acss, igraph, stringr, purrr
 License: AGPL-3
 Repository: CRAN, Github

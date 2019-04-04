@@ -7,13 +7,13 @@
 bdm1D(x, block_size, offset, base)
 }
 \arguments{
-\item{x}{character string}
+\item{x}{character string.}
 
-\item{block_size}{block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)}
+\item{block_size}{block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM).}
 
-\item{offset}{offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM)}
+\item{offset}{offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 1-dimensional Block Decomposition Method (BDM).}
 
-\item{base}{number of symbols in the alphabet over which \code{x} is defined}
+\item{base}{number of symbols in the alphabet over which \code{x} is defined.}
 }
 \value{
 A number corresponding to the estimated Kolmogorov-Chaitin complexity of the input string.

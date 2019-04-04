@@ -7,11 +7,11 @@
 bdm2D(mat, block_size, offset)
 }
 \arguments{
-\item{mat}{a valid matrix}
+\item{mat}{a valid matrix.}
 
-\item{block_size}{block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)}
+\item{block_size}{block size required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).}
 
-\item{offset}{offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM)}
+\item{offset}{offset required to estimate the Kolmogorov-Chaitin complexity of \code{x} using the 2-dimensional Block Decomposition Method (BDM).}
 }
 \value{
 A number corresponding to the estimated Kolmogorov-Chaitin complexity of the input matrix.
