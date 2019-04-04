@@ -6,6 +6,8 @@ This package is brought to you by the [Algorithmic Dynamics Lab](https://www.alg
 
 ### How to cite this package
 
+Zenil, H., Zea, A. A., Rueda-Toicen, A. Algodyn: Algorithmic Information Dynamics with the R Language, 2019.
+
 #### Maintainer: Allan A. Zea (allan.zea [at] ciens.ucv.ve)
 
 #### License: GNU Affero General Public License v3.0
