@@ -52,6 +52,10 @@ normalize_string <- function(x) {
 # Receives the already splitted vector of input strings
 get_bdm <- function (strings_vector, base) {
 
+    # Import maxKnownKs.csv and remove useless column
+    maxKnownKs <- read.csv("data/maxKnownKs.csv")
+    maxKnownKs$X <- NULL
+
     string_counts <- as.data.frame(table(strings_vector))
     string_counts$strings_vector <- as.character(string_counts$strings_vector)
     string_counts["ks"] <- acss(as.vector(string_counts[["strings_vector"]]), base)[, 1]
@@ -140,8 +144,3 @@ number_to_binary <- function(x, no_bits) {
 count_symbols <- function(x) {
     return(length(table(strsplit(x, NULL))))
 }
-
-
-# Import maxKnownKs.csv and remove useless column
-maxKnownKs <- read.csv("data/maxKnownKs.csv")
-maxKnownKs$X <- NULL

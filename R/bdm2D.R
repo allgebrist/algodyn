@@ -9,7 +9,7 @@
 #'
 #' @details This function gives an estimation of the Kolmogorov-Chaitin complexity of a matrix using the 2-dimensional Block Decomposition Method (BDM).
 #'
-#' @import purrr
+#' @importFrom purrr cross2
 #' @return A number corresponding to the estimated Kolmogorov-Chaitin complexity of the input matrix.
 #'
 #' @examples
@@ -21,6 +21,27 @@
 #'
 #' @export
 bdm2D <- function(mat, block_size, offset) {
+
+    # Load 3 x 3 CTM values
+    three_by_three_ctm <- read.csv("data/K-3x3.csv",
+                                   stringsAsFactors = FALSE,
+                                   colClasses = c("character", "numeric"),
+                                   header = FALSE)
+
+    colnames(three_by_three_ctm) <- c("square", "CTM")
+    rownames(three_by_three_ctm) <- three_by_three_ctm$square
+    three_by_three_ctm$square <- NULL
+
+
+    # Load 4 x 4 CTM values
+    four_by_four_ctm <- read.csv("data/K-4x4.csv",
+                                 stringsAsFactors = FALSE,
+                                 colClasses = c("character", "numeric"),
+                                 header = FALSE)
+
+    colnames(four_by_four_ctm) <- c("square", "CTM")
+    rownames(four_by_four_ctm) <- four_by_four_ctm$square
+    four_by_four_ctm$square <- NULL
 
     parts <- my_partition(mat, block_size, offset)
     flat_squares <- unlist(lapply(parts, stringify))
@@ -64,25 +85,3 @@ ind <- function(mat_dim, block_size, offset) {
     Map(`:`, seq(1, mat_dim - block_size + 1, by = offset),
         seq(block_size, mat_dim, by = offset))
 }
-
-
-# Load 3 x 3 CTM values
-three_by_three_ctm <- read.csv("data/K-3x3.csv",
-                               stringsAsFactors = FALSE,
-                               colClasses = c("character", "numeric"),
-                               header = FALSE)
-
-colnames(three_by_three_ctm) <- c("square", "CTM")
-rownames(three_by_three_ctm) <- three_by_three_ctm$square
-three_by_three_ctm$square <- NULL
-
-
-# Load 4 x 4 CTM values
-four_by_four_ctm <- read.csv("data/K-4x4.csv",
-                             stringsAsFactors = FALSE,
-                             colClasses = c("character", "numeric"),
-                             header = FALSE)
-
-colnames(four_by_four_ctm) <- c("square", "CTM")
-rownames(four_by_four_ctm) <- four_by_four_ctm$square
-four_by_four_ctm$square <- NULL
