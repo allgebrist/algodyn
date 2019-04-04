@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/156296743.svg)](https://zenodo.org/badge/latestdoi/156296743)
+
 # algodyn: Algorithmic Information Dynamics
 
 Algorithmic Information Dynamics (AID) is an exciting new field put forward by the Algorithmic Dynamics Lab of the Karolinska Institute, based upon some of the most mathematically mature and powerful theories at the intersection of computability, algorithmic information, dynamic systems and algebraic graph theory to tackle some of the challenges of causation from a model-driven mechanistic perspective, in particular, in application to behavioural, evolutionary and molecular reprogramming. This R package contains some relevant functions in the current AID literature.
