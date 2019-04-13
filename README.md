@@ -14,7 +14,7 @@ Zenil, Hector; Zea, Allan A.; Rueda-Toicen, Antonio (2019). Algodyn: Algorithmic
 #### Allan A. Zea (allan.zea98 [at] gmail.com), 
 #### Antonio Rueda-Toicen (antonio.rueda.toicen [at] gmail.com)
 
-#### License: GNU Affero General Public License v3.0
+### License: GNU Affero General Public License v3.0
 
 
 
