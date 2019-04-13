@@ -10,7 +10,7 @@ This extension is brought to you by the [Algorithmic Dynamics Lab](https://www.a
 
 Zenil, Hector; Zea, Allan A.; Rueda-Toicen, Antonio (2019). Algodyn: Algorithmic Information Dynamics with the R Language. DOI: 10.5281/zenodo.2629312.
 
-#### Maintainers: 
+### Maintainers: 
 #### Allan A. Zea (allan.zea98 [at] gmail.com), 
 #### Antonio Rueda-Toicen (antonio.rueda.toicen [at] gmail.com)
 
